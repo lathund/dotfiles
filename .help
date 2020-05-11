@@ -1,0 +1,6 @@
+# Remove packages & dependencies not needed
+pacman -Rs blender
+# List all packages not needed anymore
+pacman -Qdtq
+# Remove all packages not needed anymore
+pacman -Rsn $(pacman -Qdtq)
