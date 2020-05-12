@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+bin='pacman'
+bin=(`whereis $bin | cut -d ' ' -f 2`)
+
+sudo ausearch -ua $(whoami) -x $bin | grep -o 'argc.*' | while read line;
+do
+        eval $line; i=0
+        while [ $i -le $argc ]
+        do
+                name="a${i}"
+                echo -ne "${!name} "
+                i=$(($i + 1))
+        done
+        echo
+done
