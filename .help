@@ -4,3 +4,7 @@ pacman -Rs blender
 pacman -Qdtq
 # Remove all packages not needed anymore
 pacman -Rsn $(pacman -Qdtq)
+# List all installed packages
+pacman -Qi
+# List all explicitly installed packages
+pacman -Qie
